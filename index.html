@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>code-forge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body
+    class="bg-midnight w-full h-screen text-white hover:[&_button]:cursor-pointer"
+  >
+    <header
+      class="bg-glassy-box w-full h-16 px-5 md:px-[5%] border-b border-slate-text fixed top-0"
+    >
+      <nav class="w-full h-full flex justify-between items-center">
+        <div class="text-mint text-3xl font-bold">SyntaxShell</div>
+        <div></div>
+
+        <!-- header nav for big screen -->
+        <div class="hidden text-gray-200 text-xl md:flex w-3/5">
+          <i
+            class="fa-brands fa-sistrix bg-gray-300 text-gray-700 p-2 rounded-l-xl"
+          ></i>
+          <input
+            type="search"
+            placeholder="Search components..."
+            class="w-full h-10 bg-gray-300 rounded-r-xl text-gray-700 pl-5 outline-0"
+          />
+        </div>
+
+        <div class="hidden md:flex gap-[1.5vw]">
+          <a
+            href="upload-page/"
+            class="border border-slate-text p-2 rounded-lg active:scale-95"
+          >
+            Upload New
+          </a>
+          <div class="h-full flex items-center gap-[1vw]">
+            <span
+              class="hidden md:flex h-10 w-10 bg-amber-300 rounded-4xl items-center justify-center text-black text-lg"
+              >BM</span
+            >
+          </div>
+        </div>
+
+        <!-- mobile right nav -->
+        <div class="text-slate-text text-2xl flex gap-3 md:hidden">
+          <div id="search-box" class="flex items-center">
+            <button id="search-button">
+              <i class="fa-brands fa-sistrix"></i>
+            </button>
+          </div>
+          <button><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="w-full h-auto mt-25">
+      <!-- hero heading  -->
+      <section class="w-full h-auto text-center my-10">
+        <div>
+          <h1 class="text-4xl font-semibold">
+            <span class="text-mint font-bold">SyntaxShell:</span>Mordern
+            Component UI Library
+          </h1>
+          <p class="text-gray-300 text-lg pt-2">
+            A library of modern, resuable somponents built with Html, Tailwind
+            CSS v4 and JavaScript .
+          </p>
+        </div>
+      </section>
+
+      <!-- featured components -->
+      <section class="w-full h-auto px-[8vw]">
+        <div class="text-white mb-1 text-lg">Featured Components</div>
+        <div
+          class="flex flex-wrap gap-4 [&_div]:border [&_div]:border-gray-700 [&_div]:bg-glassy-box [&_div]:rounded-lg [&_div]:flex [&_div]:min-w-70 [&_i]:text-sm [&_span]:p-3 [&_span]:bg-[#395554] [&_span]:rounded-lg [&_span]:flex [&_span]:justify-center [&_span]:m-1"
+        >
+          <div>
+            <span><i class="fa-regular fa-paper-plane"></i></span>
+            Vertical Video Scrollbar
+          </div>
+          <div>
+            <span><i class="fa-regular fa-paper-plane"></i></span>
+            Glassmorphic Weather Card
+          </div>
+          <div>
+            <span><i class="fa-regular fa-paper-plane"></i></span>
+            Dyanamic Multi-Step Form
+          </div>
+          <div>
+            <span><i class="fa-regular fa-paper-plane"></i></span>
+            Navigation nigation
+          </div>
+        </div>
+      </section>
+
+      <!-- component container -->
+      <section
+        id="component-container"
+        class="mt-5 h-auto w-full flex flex-wrap gap-5 justify-center"
+      >
+        <!-- comoponents from js -->
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

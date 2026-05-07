@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* Core Branding Colors */
+  --color-midnight: #161b22;
+  --color-tech-gray: #21262d;
+  --color-mint: #91E6BF;
+  --color-mern-gold: #F4D549;
+  --color-glassy-box: #232A32;
+  
+  /* Support Colors */
+  --color-slate-text: #8b949e;
+  --color-cobalt-blue: #1f6feb;
+
+
+
+
+}
