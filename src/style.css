@@ -1,12 +1,14 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/forms";
 
 @theme {
   /* Core Branding Colors */
-  --color-midnight: #161b22;
+  --color-midnight: #111827;
   --color-tech-gray: #21262d;
   --color-mint: #91E6BF;
   --color-mern-gold: #F4D549;
-  --color-glassy-box: #232A32;
+  --color-glassy-box: #374151;
+  --color-button-bg:#1f2937;
   
   /* Support Colors */
   --color-slate-text: #8b949e;

@@ -1,73 +1,111 @@
 import "tailwindcss";
-import { supabase } from "./supabaseclient.js";
 
-const compcontainer = document.querySelector("#component-container");
-const searchdiv = document.querySelector("#search-box");
-const searchbutton = document.querySelector("#search-button");
+const maincontainer = document.querySelector('#main-container');
 
-// mobile search function
+const containers =[
+    {
+        name: "Hero Sections",
+        type: "marketing UI",
+        image: "/hero-image.jpg"
+    },
+        {
+        name: "Feature Sections",
+        type: "marketing UI",
+        image: "/feature-image.webp"
+    },
+        {
+        name: "Headers",
+        type: "marketing UI",
+        image: "/header-image.png"
+    },
+        {
+        name: "Footer Sections",
+        type: "E-commerce UI",
+        image: "/footer-image.png"
+    },
 
-searchbutton.addEventListener("click", () => {
-  searchdiv.innerHTML = `
-              <input
-              type="search"
-              class="w-60 h-10 bg-white caret-black p-2 rounded-l-lg outline:none"
-            /><i class="fa-brands fa-sistrix h-10 bg-white rounded-r-lg p-2"></i>
-  `;
+        {
+        name: "Project Portfolio",
+        type: "marketing UI",
+        image: "/project-image.png"
+    },
+        {
+        name: "Login Forms",
+        type: "marketing UI",
+        image: "/login-image.jpg"
+    },
+        {
+        name: "FAQ Sections",
+        type: "application UI",
+        image: "/faq-image.png"
+    }
+]
+
+//   showing all type of containers
+
+function showallcontainers(){
+     containers.forEach((data)=>{
+        
+        const newdiv = document.createElement('div');
+    newdiv.className ="min-w-100 h-80 rounded-lg  flex flex-col border border-glassy-box hover:cursor-pointer hover:shadow-lg hover:shadow-white/20";
+    newdiv.innerHTML =`   
+
+                    <div class="bg-glassy-box w-full h-20 px-5 rounded-t-lg flex items-center justify-between ">
+                        <div class="text-xl">${data.name}</div>
+                        <div class="bg-mint text-sm text-green-900 px-2 py-1 rounded-md">${data.type}</div>
+                    </div>
+                    <div class="bg-midnight w-full h-full rounded-b-lg ">
+                      <div class =" bg-center bg-cover bg-no-repeat h-full rounded-b-lg " style="background-image:url('${data.image}')"></div>
+                    </div>
+                
+`;
+      newdiv.addEventListener('click',()=>{
+       
+            localStorage.setItem("component-type",data.name);
+            window.location.href='/component/';
+      })
+         maincontainer.appendChild(newdiv);
+ });
+}
+
+// showing selected type of containers
+
+function showcontainers(category){
+
+    containers.forEach((data)=>{
+        
+        const newdiv = document.createElement('div');
+    newdiv.className ="min-w-100 h-80 rounded-lg  flex flex-col border border-glassy-box hover:cursor-pointer";
+    newdiv.innerHTML =`   
+
+                    <div class="bg-glassy-box w-full h-20 px-5 rounded-t-lg flex items-center justify-between ">
+                        <div class="text-xl">${data.name}</div>
+                        <div class="bg-mint text-sm text-green-900 px-2 py-1 rounded-md">${data.type}</div>
+                    </div>
+                    <div class="bg-midnight w-full h-full rounded-b-lg ">
+                      <div class =" bg-center bg-cover bg-no-repeat h-full rounded-b-lg " style="background-image:url('${data.image}')"></div>
+                    </div>
+                
+`;
+      if(category==data.type) maincontainer.appendChild(newdiv);
+
+      
+      
+   
 });
 
-function savedata(title, code, id) {
-  const componentdata = {
-    id: id,
-    title: title,
-    content: code,
-  };
-  localStorage.setItem("componentdata", JSON.stringify(componentdata));
-
-  console.log("saved successfully");
-}
-window.savedata = savedata;
-
-// get data form supbase
-
-async function getdata() {
-  const { data, error } = await supabase.from("components").select("*");
-
-  if (error) console.error("Error:", error);
-  else {
-    return data;
-    console.log("success");
-  }
 }
 
-// create component grid using data
+//  listening change form select category
 
-async function getalldata() {
-  const componentdata = await getdata();
+const categorybox=document.querySelector('#select-category');
 
-  componentdata.forEach((data) => {
-    window.id = data.id;
-    window.componenttitle = data.title;
-    window.componentcode = data.component_code;
+categorybox.addEventListener('change',(event)=>{
+    const category=event.target.value;
+    maincontainer.innerHTML=``;
 
-    const newdiv = document.createElement("div");
+    if(category=="all category") showallcontainers();
+     else  showcontainers(category);
+});
 
-    newdiv.className =
-      "bg-glassy-box w-80 h-80 p-3 rounded-xl border border-gray-700";
-    newdiv.innerHTML = `
-           <div class="flex justify-between">
-          <h2 class="text-lg">${data.title}</h2>
-           <span class="bg-[#2E6DB4] px-1.5 py-0.5 mr-2 rounded-lg">v4</span>
-        </div>
-        <div class="border border-slate-text bg-white/10 h-50 w-72 my-3 rounded-xl flex justify-center align-center">${data.component_code}</div>
-        <div class="w-full text-center flex gap-2">
-          <button onclick="savedata(componenttitle,componentcode,id);" class="bg-mint text-black text-md w-full rounded-lg py-2 hover:cursor-pointer"><a href="./component-page/">VIEW CODE</a></button>
-          <button class="border border-mint text-white text-md w-full rounded-lg py-2 hover:cursor-pointer">Copy HTML</button>
-        </div>
-      
-    `;
-    compcontainer.appendChild(newdiv);
-  });
-}
-
-getalldata();
+showallcontainers();
