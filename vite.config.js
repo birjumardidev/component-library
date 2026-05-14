@@ -13,8 +13,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'upload-page/index.html'),
-        contact: resolve(__dirname, 'component-page/index.html'),
+        upload: resolve(__dirname, 'upload-page/index.html'),
+        component: resolve(__dirname, 'component/index.html'),
       },
     },
   },

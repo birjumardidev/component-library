@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>code-forge</title>
+    <meta
+      name="description"
+      content="Upload and publish UI components to the SyntaxShell library."
+    />
+    <link rel="canonical" href="/upload-page/" />
+    <meta name="theme-color" content="#111827" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -11,34 +17,40 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-  <style type="text/tailwindcss">
-    @import "tailwindcss";
+    <style type="text/tailwindcss">
+      @import "tailwindcss";
 
-    @theme {
-  --color-midnight: #111827;
-  --color-tech-gray: #21262d;
-  --color-mint: #91E6BF;
-  --color-mern-gold: #F4D549;
-  --color-glassy-box: #374151;
-  --color-button-bg:#1f2937;
-  
-  /* Support Colors */
-  --color-slate-text: #8b949e;
-  --color-cobalt-blue: #1f6feb;
+      @theme {
+        --color-midnight: #111827;
+        --color-tech-gray: #21262d;
+        --color-mint: #91e6bf;
+        --color-mern-gold: #f4d549;
+        --color-glassy-box: #374151;
+        --color-button-bg: #1f2937;
 
-    }
-  </style>
+        /* Support Colors */
+        --color-slate-text: #8b949e;
+        --color-cobalt-blue: #1f6feb;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-  <body class="bg-midnight w-full h-screen text-white hover:[&_button]:cursor-pointer">
+  </head>
+  <body
+    class="bg-midnight w-full h-screen text-white hover:[&_button]:cursor-pointer"
+  >
+    <a class="sr-only focus:not-sr-only" href="#main-content"
+      >Skip to content</a
+    >
     <header
       class="bg-midnight w-full h-16 px-5 md:px-[5%] border-b border-slate-text fixed top-0 z-10"
     >
       <nav class="w-full h-full flex gap-20 justify-center items-center">
         <div class="text-mint text-3xl font-bold">SyntaxShell</div>
-        
+
         <!-- header nav for big screen -->
-        <div class="hidden text-gray-200 text-xl md:flex w-3/5 items-center bg-glassy-box rounded-xl">
+        <div
+          class="hidden text-gray-200 text-xl md:flex w-3/5 items-center bg-glassy-box rounded-xl"
+        >
           <i
             class="fa-brands fa-sistrix text-gray-300 px-4 rounded-l-xl z-10 flex"
           ></i>
@@ -56,7 +68,6 @@
           >
             Upload New
           </a>
-
         </div>
 
         <!-- mobile right nav -->
@@ -70,66 +81,101 @@
         </div>
       </nav>
     </header>
-    
 
-   <main class="px-50 pt-25">
-       <div class="w-full h-105">
-                
-             <div class="text-center text-mint text-5xl font-semibold">PUBLISH NEW UI COMPONENT</div>
-             <div class="bg-glassy-box w-full h-full rounded-t-md mt-8 px-5 py-2">
-                <div class="text-2xl font-semibold">UPLOAD & DEFINE COMPONENT</div>
-                <div class="flex gap-5 ">
-                    <div class="w-full">
-                           <div class="flex gap-2 my-2 ml-2 [&_div]:border [&_div]:rounded-md [&_div]:p-1 [&_div]:text-sm hover:[&_div]:cursor-pointer ">
-                              <div id="html-box" class="bg-mint text-gray-800">HTML CODE</div>
-                              <div id="js-box">JS CODE</div>
-                              <div id="show-code-box">SHOW CODE</div>
-                           </div>
-                           <div class="[&_textarea]:border [&_textarea]:border-dashed [&_textarea]:w-full [&_textarea]:h-80 [&_textarea]:rounded-lg [&_textarea]:bg-black/15">
-                               <textarea name="paste-code" id="html-code" class=""></textarea>
-                               <textarea name="paste-code" id="js-code" class="hidden"></textarea>
-                               <textarea name="paste-code" id="show-code" class="hidden"></textarea>
-                           </div>
-                    </div>
-                    <div class="w-full flex flex-col gap-4 mt-5 [&_input]:border-slate-text [&_input]:bg-black/15">
-                           <div>
-                                <div>COMPONENT TITLE</div>
-                                <input id="component-title" type="text" placeholder="Vertical Video Scrollar" class="w-full border rounded-md h-10 pl-2" required>
-                           </div>
-                           <div>
-                             <div>CATEGORY</div>
-                                <select id="component-category" type="text" placeholder="Media" class="w-full border border-slate-text text-slate-text rounded-md h-10 pl-2 bg-black/15 [&_option]:bg-midnight">
-                                  <option value="hero sections">Hero Sections</option>
-                                  <option value="feature sections">Feature Sections</option>
-                                  <option value="headers">Headers</option>
-                                  <option value="footers">Footers</option>
-                                  <option value="login forms">Login Forms</option>
-                                  <option value="FAQ sections">FAQ Sections</option>
-                                  <option value="project portfolio">Project Portfolio</option>
-                                  </select>
-                           </div>
-                           <div>
-                             <div>DESCRIPTION</div>
-                                <textarea name="" id="component-description" placeholder="A library of modern, resuable somponents built with Html, Tailwind CSS v4 and JavaScript" class="w-full border p-2 border-slate-text bg-black/15  rounded-md h-40"></textarea>
-                           </div>
-                    </div>
-                </div>
+    <main id="main-content" role="main" class="px-50 pt-25">
+      <div class="w-full h-105">
+        <div class="text-center text-mint text-5xl font-semibold">
+          PUBLISH NEW UI COMPONENT
+        </div>
+        <div class="bg-glassy-box w-full h-full rounded-t-md mt-8 px-5 py-2">
+          <div class="text-2xl font-semibold">UPLOAD & DEFINE COMPONENT</div>
+          <div class="flex gap-5">
+            <div class="w-full">
+              <div
+                class="flex gap-2 my-2 ml-2 [&_div]:border [&_div]:rounded-md [&_div]:p-1 [&_div]:text-sm hover:[&_div]:cursor-pointer"
+              >
+                <div id="html-box" class="bg-mint text-gray-800">HTML CODE</div>
+                <div id="js-box">JS CODE</div>
+                <div id="show-code-box">SHOW CODE</div>
+              </div>
+              <div
+                class="[&_textarea]:border [&_textarea]:border-dashed [&_textarea]:w-full [&_textarea]:h-80 [&_textarea]:rounded-lg [&_textarea]:bg-black/15"
+              >
+                <textarea name="paste-code" id="html-code" class=""></textarea>
+                <textarea
+                  name="paste-code"
+                  id="js-code"
+                  class="hidden"
+                ></textarea>
+                <textarea
+                  name="paste-code"
+                  id="show-code"
+                  class="hidden"
+                ></textarea>
+              </div>
+            </div>
+            <div
+              class="w-full flex flex-col gap-4 mt-5 [&_input]:border-slate-text [&_input]:bg-black/15"
+            >
+              <div>
+                <div>COMPONENT TITLE</div>
+                <input
+                  id="component-title"
+                  type="text"
+                  placeholder="Vertical Video Scrollar"
+                  class="w-full border rounded-md h-10 pl-2"
+                  required
+                />
+              </div>
+              <div>
+                <div>CATEGORY</div>
+                <select
+                  id="component-category"
+                  type="text"
+                  placeholder="Media"
+                  class="w-full border border-slate-text text-slate-text rounded-md h-10 pl-2 bg-black/15 [&_option]:bg-midnight"
+                >
+                  <option value="hero sections">Hero Sections</option>
+                  <option value="feature sections">Feature Sections</option>
+                  <option value="headers">Headers</option>
+                  <option value="footers">Footers</option>
+                  <option value="login forms">Login Forms</option>
+                  <option value="FAQ sections">FAQ Sections</option>
+                  <option value="project portfolio">Project Portfolio</option>
+                </select>
+              </div>
+              <div>
+                <div>DESCRIPTION</div>
+                <textarea
+                  name=""
+                  id="component-description"
+                  placeholder="A library of modern, resuable somponents built with Html, Tailwind CSS v4 and JavaScript"
+                  class="w-full border p-2 border-slate-text bg-black/15 rounded-md h-40"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex gap-4 items-center justify-end bg-white/10 w-full h-16 p-5 rounded-b-md border-t border-slate-text [&_button]:px-4 [&_button]:p-2 [&_button]:rounded-md"
+        >
+          <button
+            id="cancle-button"
+            class="border border-mint text-mint font-semibold hover:bg-mint hover:text-black"
+          >
+            CANCLE
+          </button>
+          <button
+            id="publish-button"
+            class="bg-mern-gold text-black hover:scale-105 active:scale-95"
+          >
+            PUBLISH COMPONENT
+          </button>
+        </div>
+      </div>
+    </main>
 
-
-             </div> 
-            <div class="flex gap-4 items-center justify-end bg-white/10 w-full h-16 p-5 rounded-b-md border-t border-slate-text  [&_button]:px-4 [&_button]:p-2 [&_button]:rounded-md">
-
-                <button id="cancle-button" class="border border-mint text-mint font-semibold hover:bg-mint hover:text-black">CANCLE</button>
-                <button id="publish-button" class="bg-mern-gold text-black hover:scale-105 active:scale-95">PUBLISH COMPONENT</button>
-                </div>
-
-
-       </div>
-
-
-   </main>
-
-
+    <link rel="preload" as="script" href="/src/upload.js" />
     <script type="module" src="/src/upload.js"></script>
-</body>
+  </body>
 </html>

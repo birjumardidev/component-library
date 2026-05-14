@@ -15,7 +15,7 @@ async function getcomponents() {
             newdiv.className = "w-full h-auto mb-20";
 
             newdiv.innerHTML = `
-                  <div class="w-full h-20 text-4xl font-semibold text-gray-300 flex flex-col gap-2 mb-5"><h1>${data.title}</h1><p class="text-[1.5vw] text-slate-text">${data.description}</p></div>
+                  <div class=" w-full h-auto text-3xl font-semibold text-gray-200 flex flex-col gap-2 mb-5"><h1>${data.title}</h1><p class="text-[1.2vw] text-slate-text">${data.description}</p></div>
 
                <div class="w-full h-auto rounded-md border border-gray-500 flex flex-col">
                 <div class="w-full h-1/8 bg-glassy-box rounded-t-md flex justify-between px-5 py-3 text-slate-text hover:[&_div]:cursor-pointer">
@@ -72,7 +72,7 @@ async function getcomponents() {
                if (clickedelemet === "desktop") {
                   if (showcode.textContent === "show code") {
                      componentpreview.className = "w-full h-110 bg-white/5 rounded-b-md flex justify-center";               
-                     componentcode.className ="@container w-full h-full text-white flex bg-midnight";      
+                     componentcode.className ="@container w-full h-full text-white flex bg-transparent";      
                      
                   }
                } else if (clickedelemet === "ipad") {
@@ -80,7 +80,7 @@ async function getcomponents() {
                      componentpreview.className =
                         "w-full h-90 bg-white/5 rounded-b-md flex justify-center";
                      componentcode.className =
-                        "@container w-3xl h-full text-white flex bg-midnight";
+                        "@container w-3xl h-full text-white flex bg-transparent";
                   
                   }
                } else if (clickedelemet === "phone") {
@@ -88,7 +88,7 @@ async function getcomponents() {
                      componentpreview.className =
                         "w-full h-60 bg-white/5 rounded-b-md flex justify-center";
                      componentcode.className =
-                        "@container w-sm h-full text-white flex bg-midnight";
+                        "@container w-sm h-full text-white flex bg-transparent";
                      
                   }
                } else if (clickedelemet === "html-box-button") {
