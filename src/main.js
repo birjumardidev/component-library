@@ -33,7 +33,7 @@ const containers =[
         count:0
     },
         {
-        name: "Footer Sections",
+        name: "Footers",
         type: "E-commerce UI",
         image: "/footer-image.png",
         count:0
