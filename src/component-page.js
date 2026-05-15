@@ -86,7 +86,7 @@ async function getcomponents() {
                } else if (clickedelemet === "phone") {
                   if (showcode.textContent === "show code") {
                      componentpreview.className =
-                        "w-full h-70 bg-white/5 rounded-b-md flex justify-center";
+                        "w-full h-90 bg-white/5 rounded-b-md flex justify-center";
                      componentcode.className =
                         "@container-size w-sm h-full text-white bg-transparent";
                      
