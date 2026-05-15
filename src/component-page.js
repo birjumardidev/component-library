@@ -131,6 +131,7 @@ async function getcomponents() {
                }
             });
 
+            // using prism for highlighting the code
             const htmlcode = newdiv.querySelector("#html-code");
             showCodeInPrism(data.show_code);
 
@@ -146,6 +147,7 @@ async function getcomponents() {
             const jscode = newdiv.querySelector("#js-code");
             jscode.innerHTML = `<code class="language-javascript">${data.js_code}</code>`;
 
+
             const jsboxbutton = newdiv.querySelector("#js-box-button");
             if (!data.js_code) jsboxbutton.classList.add("hidden");
 
@@ -157,8 +159,14 @@ async function getcomponents() {
                   console.error("Failed to copy: ", err);
                }
             }
-
+            
             componentconatiner.appendChild(newdiv);
+
+            const scriptcode=document.createElement('script');
+            scriptcode.textContent=data.js_code;
+            document.body.appendChild(scriptcode);
+            
+            
 
             const htmlCodeElem = newdiv.querySelector("#html-code code");
             if (htmlCodeElem && window.Prism && Prism.highlightElement) {
