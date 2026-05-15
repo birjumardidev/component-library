@@ -34,8 +34,8 @@ async function getcomponents() {
                        </div>
                        
                       </div>
-                <div id="componentshowbox" class="flex w-full h-110 bg-white/5 rounded-b-md justify-center">
-                <div id="component-code" class="w-full h-full">${data.html_code}</div>
+                <div id="componentshowbox" class="flex w-full h-130 bg-white/5 rounded-b-md justify-center">
+                <div id="component-code" class="@container-size w-full h-full text-white bg-transparent">${data.html_code}</div>
              
                   <div id="code-box" class="w-full h-auto text-white hidden">
                      <div class="h-8 w-full flex justify-between items-center text-slate-text hover:[*_div]:cursor-pointer">
@@ -71,24 +71,24 @@ async function getcomponents() {
 
                if (clickedelemet === "desktop") {
                   if (showcode.textContent === "show code") {
-                     componentpreview.className = "w-full h-110 bg-white/5 rounded-b-md flex justify-center";               
-                     componentcode.className ="@container w-full h-full text-white flex bg-transparent";      
+                     componentpreview.className = "w-full h-130 bg-white/5 rounded-b-md flex justify-center";               
+                     componentcode.className ="@container-size w-full h-full text-white bg-transparent";      
                      
                   }
                } else if (clickedelemet === "ipad") {
                   if (showcode.textContent === "show code") {
                      componentpreview.className =
-                        "w-full h-90 bg-white/5 rounded-b-md flex justify-center";
+                        "w-full h-100 bg-white/5 rounded-b-md flex justify-center";
                      componentcode.className =
-                        "@container w-3xl h-full text-white flex bg-transparent";
+                        "@container-size w-3xl h-full text-white bg-transparent";
                   
                   }
                } else if (clickedelemet === "phone") {
                   if (showcode.textContent === "show code") {
                      componentpreview.className =
-                        "w-full h-60 bg-white/5 rounded-b-md flex justify-center";
+                        "w-full h-70 bg-white/5 rounded-b-md flex justify-center";
                      componentcode.className =
-                        "@container w-sm h-full text-white flex bg-transparent";
+                        "@container-size w-sm h-full text-white bg-transparent";
                      
                   }
                } else if (clickedelemet === "html-box-button") {
