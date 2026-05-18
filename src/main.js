@@ -46,12 +46,6 @@ const containers =[
         count:0
     },
         {
-        name: "Login Forms",
-        type: "marketing UI",
-        image: "/login-image.jpg",
-        count:0
-    },
-        {
         name: "FAQ Sections",
         type: "application UI",
         image: "/faq-image.png",
