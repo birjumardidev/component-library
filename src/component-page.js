@@ -116,10 +116,10 @@ async function getcomponents() {
                } else if (clickedelemet === "show-code-button") {
                   if (showcode.textContent == "preview") {
                      showcode.textContent = "show code";
-                     componentcode.className = "w-full h-full";
+                     componentcode.className = "@container-size w-full h-full text-white bg-transparent";
                      codebox.className = "w-full h-auto text-white hidden";
                      componentpreview.className =
-                        "w-full h-110 bg-white/5 rounded-b-md flex justify-center";
+                        "w-full h-130 bg-white/5 rounded-b-md flex justify-center";
                   } else {
                      showcode.textContent = "preview";
 
